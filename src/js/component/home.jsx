@@ -46,7 +46,15 @@ const Home = () => {
 	}
 	return (
 		<div className="text-center">
-			
+			<input type="text" onChange={inputChange} />
+            <button onClick={addTodo}>Add Todo</button>
+            <h1>Todos</h1>
+            {todos.map((item, index)=>{
+                return(
+                    <h6>{item.label}
+                    <button onClick={()=>removeTodo(index)}>x</button></h6>
+                )
+            })}
 		</div>
 	);
 };
